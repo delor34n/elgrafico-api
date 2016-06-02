@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	getLastNews: function (req,res) {
+	getAllLastNews: function (req,res) {
 		var request = require('request');
 		var cheerio = require('cheerio');
 		var Promise = require("promise");
