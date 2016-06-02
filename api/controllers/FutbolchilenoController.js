@@ -40,7 +40,7 @@ module.exports = {
 		                err.res = response;
 		                return reject(err);
 		            }
-		            resolve(JSON.stringify(scrapedPage));
+		            resolve(JSON.parse(JSON.stringify(scrapedPage)));
 				});
 			});
 		}
