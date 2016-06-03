@@ -18,7 +18,11 @@ module.exports = {
 		}
 
 		Promise.all(promises).then(function(data) {
-		    return res.send(data);
+			var bigArray = [];
+			data.forEach(function(element){
+				bigArray.push(element);
+			});
+		    return res.send(bigArray);
 		});
 
 		function scrape(url){
