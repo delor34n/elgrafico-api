@@ -13,16 +13,12 @@ module.exports = {
 		var promises = [];
 
 		var url = "http://www.elgraficochile.cl/prontus_elgrafico/site/tax/port/all/taxport_2___";
-		for(var page=1;page<=10;page++){
+		for(var page=1;page<=2;page++){
 			promises.push(scrape(url + page + ".html"));
 		}
 
 		Promise.all(promises).then(function(data) {
-			var bigArray = [];
-			data.forEach(function(element){
-				bigArray.push(element);
-			});
-		    return res.send(bigArray);
+		    return res.send(data);
 		});
 
 		function scrape(url){
